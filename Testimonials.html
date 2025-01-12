@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials 用户体验 - IPF Immune®</title>
+    <meta name="google" content="notranslate">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Prevent navbar from overlapping content */
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .nav-bar {
+            background: #2c3e50;
+            display: flex;
+            justify-content: start; /* Align content to the start */
+            align-items: center;
+            padding: 10px;
+            position: fixed; /* Make navbar sticky */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for visibility */
+        }
+        .nav-bar img.logo {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .menu {
+            display: flex;
+            gap: 5px;
+            margin-left: 30px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 8px;
+            font-size: 16px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background 0.3s, border 0.3s;
+        }
+        .menu a:hover {
+            background: #34495e;
+            border: 1px solid #fff;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 30px;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2c3e50;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                border-top: 1px solid #ddd;
+                max-height: 70vh; /* Limit height for scrollable menu */
+                overflow-y: auto; /* Enable vertical scrolling */
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu a {
+                padding: 10px;
+                text-align: center;
+            }
+            .menu-icon {
+                display: block;
+            }
+           .scroll-cue {
+            display: none;
+            position: absolute;
+            top: 85%;
+            left: 60px;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #fff;
+            animation: bounce 1.5s infinite;
+            z-index: 1001;
+            }
+            .menu.active .scroll-cue {
+                display: block; /* Show arrow when menu is active */
+            }
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .container img {
+            width: 45%;
+            max-width: none;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .container img {
+                width: 80%; /* Enlarges the image on phones */
+            }
+        }
+        .testimonial {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial h2 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .testimonial p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.querySelector('.menu-icon');
+            const menu = document.querySelector('.menu');
+            const scrollCue = document.createElement('div');
+            scrollCue.className = 'scroll-cue';
+            scrollCue.innerHTML = '⇓';
+            menu.appendChild(scrollCue);
+
+            menuIcon.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+
+            menu.addEventListener('scroll', () => {
+                if (menu.scrollTop > 10) {
+                    scrollCue.style.display = 'none'; // Hide arrow after scrolling
+                } else {
+                    scrollCue.style.display = 'block'; // Show arrow at the top
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <span class="menu-icon">&#9776;</span>
+    <div class="menu">
+        <a href="index.html">Home<br>首页</a>
+        <a href="About us.html">About Us<br>关于我们</a>
+        <a href="Product Overview.html">Product Overview<br>产品概况</a>
+        <a href="Science_and_Research.html">Science & Research<br>科研</a>
+        <a href="Application Areas.html">Applications<br>用途</a>
+        <a href="Testimonials.html">Testimonials<br>用户体验</a>
+        <a href="Sales Page.html">Order<br>下单</a>
+        <a href="FAQs.html">FAQs<br>疑问</a>
+        <a href="NewsUpdates.html">News<br>新闻</a>
+        <a href="Contact Us.html">Contact Us<br>联系我们</a>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="container">
+    <h1>Testimonials</h1>
+    <h1>用户体验</h1>
+    <img src="./Testimonial.png" alt="Testimonial">
+    <div class="testimonial">
+        <h2>J M Richard</h2>
+        <p>I was tested with HSV-2 antibodies years ago; however, I have mild symptoms and outbreaks of HSV-2. A single bump would form on my skin when my immune system weakens. After taking IPF, the tingling symptoms and the node on my skin disappeared.</p>
+        <p>多年前，我被检测出 HSV-2 抗体；然而，我的 HSV-2 症状和爆发非常轻微。使用 IPF 后，刺痛症状和皮肤上的结节消失了。</p>
+    </div>
+    <div class="testimonial">
+        <h2>Rayski X</h2>
+        <p>This is my first actual review in my history with Amazon; not because products I've ordered weren’t great, but because nothing ever blew me away as IPF did. Its impact on my wellness is extraordinary.</p>
+        <p>这是我在亚马逊的第一个真正评论；并不是因为我订购的产品不好，而是因为没有什么产品像 IPF 那样让我惊艳。它对我的健康影响非同凡响。</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Virogentics. All rights reserved. 版权所有。
+</footer>
+
+</body>
+</html>

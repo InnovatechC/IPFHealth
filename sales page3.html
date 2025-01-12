@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Place Order / 下单 - IPF Immune®</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Prevent navbar overlap */
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        .nav-bar {
+            background: #2c3e50;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-bar img.logo {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px; /* Minimize space between the logo and the menu */
+        }
+        .menu {
+            display: flex;
+            gap: 5px;
+            margin-left: 30px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 8px;
+            font-size: 16px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background 0.3s, border 0.3s;
+        }
+        .menu a:hover {
+            background: #34495e;
+            border: 1px solid #fff;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 30px;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2c3e50;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                border-top: 1px solid #ddd;
+                max-height: 70vh; /* Limit height to prevent overflow */
+                overflow-y: auto; /* Enable vertical scrolling */
+                z-index: 1000;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu a {
+                padding: 10px;
+                text-align: center;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+        .scroll-cue {
+            display: none;
+            position: absolute;
+            top: 85%;
+            left: 60px;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #fff;
+            animation: bounce 1.5s infinite;
+            z-index: 1001;
+        }
+        .menu.active .scroll-cue {
+            display: block;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .container img {
+            width: 40%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .container img {
+                width: 80%;
+                max-width: none;
+            }
+        }
+        .sales-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center; /* Center align text */
+            width: 60%; /* Restrict width for better centering */
+            margin-left: auto; /* Center horizontally */
+            margin-right: auto; /* Center horizontally */
+        }
+        .sales-content h2 {
+            color: #2c3e50;
+        }
+        .sales-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Flashing Button Animation */
+        @keyframes flashButton {
+            0%, 100% {
+                background-color: #2c3e50; /* Original dark blue */
+                color: #fff; /* White text */
+            }
+            50% {
+                background-color: #8B0000; /* Flash to red */
+                color: #000; /* Black text */
+            }
+        }
+
+        .purchase-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 30px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            animation: flashButton 2s infinite; /* Add flashing animation */
+        }
+
+        .purchase-button:hover {
+            background-color: #34495e;
+        }
+
+        .payment-methods img {
+            max-width: 50px;
+            margin: 10px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <span class="menu-icon">&#9776;</span>
+    <div class="menu" id="menu">
+        <a href="index.html">Home<br>首页</a>
+        <a href="About us.html">About Us<br>关于我们</a>
+        <a href="Product Overview.html">Product Overview<br>产品概况</a>
+        <a href="Science_and_Research.html">Science & Research<br>科研</a>
+        <a href="Application Areas.html">Applications<br>用途</a>
+        <a href="Testimonials.html">Testimonials<br>用户体验</a>
+        <a href="Sales Page.html">Order<br>下单</a>
+        <a href="FAQs.html">FAQs<br>疑问</a>
+        <a href="NewsUpdates.html">News<br>新闻</a>
+        <a href="Contact Us.html">Contact Us<br>联系我们</a>
+        <div class="scroll-cue">⇓</div>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="container">
+    <h1>Order </h1>
+    <h1>下单 🛒</h1>
+
+    <img src="./Supplement.png" alt="Supplement Product">
+    <div class="sales-content">
+        <h2>Enjoy a smooth shopping experience / 流畅购物体验</h2>
+        <p>Transparent pricing tailored for Chinese customers. Simple order process with multiple payment options.</p>
+        <p>为中国客户量身定制的透明定价。简单的订购流程，提供多种付款方式。</p>
+        <a href="checkout.html" class="purchase-button">Buy Now / 立即购买</a>
+        <div class="payment-methods">
+            <h3>Payment Methods / 支付方式</h3>
+            <img src="./alipay.png" alt="Alipay" title="Alipay">
+            <img src="./wechat_pay.png" alt="WeChat Pay" title="WeChat Pay">
+            <img src="./visa-logo.png" alt="Visa" title="Visa">
+            <img src="./logo-maste.png" alt="MasterCard" title="MasterCard">
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Virogentics. All rights reserved. 版权所有。
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.querySelector(".menu-icon");
+        const menu = document.querySelector(".menu");
+        const scrollCue = document.querySelector(".scroll-cue");
+
+        menuIcon.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        });
+
+        menu.addEventListener("scroll", function () {
+            if (menu.scrollTop > 10) {
+                scrollCue.style.display = "none"; // Hide cue after scrolling
+            } else {
+                scrollCue.style.display = "block"; // Show cue when at the top
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

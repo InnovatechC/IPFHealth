@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Product Overview 产品概况 - IPF Immune®</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Prevent navbar from overlapping content */
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .nav-bar {
+            background: #2c3e50;
+            display: flex;
+            justify-content: start; /* Align content to the start */
+            align-items: center;
+            padding: 10px; /* Reduce padding */
+            position: fixed; /* Make navbar sticky */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for visibility */
+        }
+        .nav-bar img.logo {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px; /* Minimize space between the logo and the menu */
+        }
+        .menu {
+            display: flex;
+            gap: 5px; /* Reduce space between menu items */
+            margin-left: 30px; /* Adjust spacing */
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 8px;
+            font-size: 16px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background 0.3s, border 0.3s;
+        }
+        .menu a:hover {
+            background: #34495e;
+            border: 1px solid #fff;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 30px; /* Add spacing from the right */
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2c3e50;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                border-top: 1px solid #ddd;
+                max-height: 70vh; /* Limit height for scroll */
+                overflow-y: auto; /* Enable vertical scrolling */
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu a {
+                padding: 10px; /* Adjust padding for mobile */
+                text-align: center;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+        .scroll-cue {
+            display: none;
+            position: absolute;
+            top: 85%;
+            left: 60px;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #fff;
+            animation: bounce 1.5s infinite;
+            z-index: 1001;
+        }
+        .menu.active .scroll-cue {
+            display: block;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .container img {
+            width: 40%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        p, ul {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <span class="menu-icon">&#9776;</span>
+    <div class="menu">
+        <a href="index.html">Home<br>首页</a>
+        <a href="About us.html">About Us<br>关于我们</a>
+        <a href="Product Overview.html">Product Overview<br>产品概况</a>
+        <a href="Science_and_Research.html">Science & Research<br>科研</a>
+        <a href="Application Areas.html">Applications<br>用途</a>
+        <a href="Testimonials.html">Testimonials<br>用户体验</a>
+        <a href="Sales Page.html">Order<br>下单</a>
+        <a href="FAQs.html">FAQs<br>疑问</a>
+        <a href="NewsUpdates.html">News<br>新闻</a>
+        <a href="Contact Us.html">Contact Us<br>联系我们</a>
+        <div class="scroll-cue">⇓</div>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="container">
+    <h1>Product Overview</h1>
+    <h1>产品概况</h1>
+    <img src="./Enzolitics IPF.png" alt="IPF Immune®">
+    <h2>IPF Immune®’s Unmatched Benefits begins here now </h2>
+    <h2>你无与伦比的自然防御从这开始。</h2>
+    <ul>
+        <li><strong>Boost Immunity:</strong> Fuel your immune system, nourish your body, protect your future.<br><strong>增强免疫力：</strong> 滋养您的身体，保护您的未来, 为您的免疫系统加油, 对抗感染。</li>
+        <li><strong>Scientifically Tested:</strong> Provides 35x lower toxicity than traditional antiviral therapies like Tamiflu and Acyclovir.<br><strong>科学验证：</strong> 比传统抗病毒疗法（如达菲和阿昔洛韦）毒性低 35 倍。</li>
+        <li><strong>Trusted Worldwide:</strong> Made in U.S.A, being used by tens of thousands of people worldwide.<br><strong>世界闻名：</strong> 美国生产，享受全世界数万用户的信任。</li>
+        <li><strong>Registered & Patented:</strong> Registered under NDI #1083 with U.S. Patent #8,309,072.<br><strong>注册和专利：</strong> 注册编号为 NDI #1083，专利号为 #8,309,072。</li>
+	<li><strong>Directions for Use:</strong> Take 1–2 servings daily or as recommended by your healthcare provider.<br><strong>使用说明：</strong> 每日服用1-2次，或按您的医疗提供者建议服用</li>
+    </ul>
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Virogentics. All rights reserved. 版权所有。
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.querySelector(".menu-icon");
+        const menu = document.querySelector(".menu");
+        const scrollCue = document.querySelector(".scroll-cue");
+
+        menuIcon.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        });
+
+        menu.addEventListener("scroll", function () {
+            if (menu.scrollTop > 10) {
+                scrollCue.style.display = "none"; // Hide cue after scrolling
+            } else {
+                scrollCue.style.display = "block"; // Show cue when at the top
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

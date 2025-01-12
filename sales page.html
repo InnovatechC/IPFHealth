@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Place Order / 下单 - IPF Immune®</title>
+    <style>
+        /* Styles remain unchanged */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        .nav-bar {
+            background: #2c3e50;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-bar img.logo {
+            max-width: 100px;
+            height: auto;
+        }
+        .menu {
+            display: flex;
+            gap: 5px;
+            margin-left: 30px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .menu a:hover {
+            background: #34495e;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .container img {
+            width: 40%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .sales-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .purchase-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 30px;
+            background-color: #b22222; /* Deep red */
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            animation: flashButton 1.5s infinite;
+        }
+        .purchase-button:hover {
+            background-color: #8b0000; /* Darker red for hover */
+        }
+
+        @keyframes flashButton {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="nav-bar">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <span class="menu-icon">&#9776;</span>
+    <div class="menu">
+        <a href="index.html">Home<br>首页</a>
+        <a href="About us.html">About Us<br>关于我们</a>
+        <a href="Product Overview.html">Product Overview<br>产品概况</a>
+        <a href="Science_and_Research.html">Science & Research<br>科研</a>
+        <a href="Application Areas.html">Applications<br>用途</a>
+        <a href="Testimonials.html">Testimonials<br>用户体验</a>
+        <a href="Sales Page.html">Order<br>下单</a>
+        <a href="FAQs.html">FAQs<br>疑问</a>
+        <a href="NewsUpdates.html">News<br>新闻</a>
+        <a href="Contact Us.html">Contact Us<br>联系我们</a>
+
+    </div>
+</div>
+
+<div class="container">
+    <h1>Order</h1>
+    <h1>下单 🛒</h1>
+    <img src="./Supplement.png" alt="Supplement Product">
+    <div class="sales-content">
+        <h2>Enjoy a smooth shopping experience / 流畅购物体验</h2>
+        <p>Transparent pricing tailored for Chinese customers. Simple order process with multiple payment options.</p>
+        <a id="checkout-button" class="purchase-button">Buy Now / 立即购买</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkoutButton = document.getElementById('checkout-button');
+        checkoutButton.addEventListener('click', () => {
+            fetch('/.netlify/functions/create-checkout-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ priceId: 'price_1QgGAcJfmGHXLAv1EQdNCjHr' }) // Replace with your valid Price ID
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.url) {
+                        window.location.href = data.url; // Redirect to Stripe Checkout
+                    } else {
+                        console.error('Error:', data.error);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    });
+</script>
+</body>
+</html>

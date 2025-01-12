@@ -1,0 +1,21 @@
+{
+    "name": "IPF Immune®",
+    "short_name": "IPF",
+    "description": "Your immune support starts here!",
+    "icons": [
+        {
+            "src": "icon-App1.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-App2.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f3f3f3",
+    "theme_color": "#5A0000"
+}

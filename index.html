@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Homepage - IPF Immune®</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Prevent navbar from overlapping content */
+            color: #ffffff;
+            background-color: #d3d3d3;
+        }
+
+        .nav-bar {
+            background: #2c3e50;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-bar img.logo {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 5px;
+            margin-left: 30px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 8px;
+            font-size: 16px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background 0.3s, border 0.3s;
+        }
+
+        .menu a:hover {
+            background: #34495e;
+            border: 1px solid #fff;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2c3e50;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                border-top: 1px solid #ddd;
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu a {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+	.scroll-cue {
+            display: none;
+            position: absolute;
+            top: 85%;
+            left: 60px;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #fff;
+            animation: bounce 1.5s infinite;
+            z-index: 1001;
+        }
+
+        .menu.active .scroll-cue {
+            display: block;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        .text-area {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 80px auto;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .image-container img {
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .sticky-button {
+            position: fixed;
+            top: 120px;
+            right: 50px;
+            z-index: 1000;
+            background-color: #8B0000;
+            color: #fff;
+            border: none;
+	    height:50px;
+            padding: 0 15px;
+            font-size: 14px;
+            border-radius: 0px;
+            cursor: pointer;
+	    align-items: center;
+ 	    justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+	.sticky-button svg {
+    	    margin-right: 8px; /* Space between icon and text */
+    	    fill: #fff;
+	}
+        .sticky-button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <span class="menu-icon">&#9776;</span>
+    <div class="menu">
+        <a href="index.html">Home<br>首页</a>
+        <a href="About us.html">About Us<br>关于我们</a>
+        <a href="Product Overview.html">Product Overview<br>产品概况</a>
+        <a href="Science_and_Research.html">Science & Research<br>科研</a>
+        <a href="Application Areas.html">Applications<br>用途</a>
+        <a href="Testimonials.html">Testimonials<br>用户体验</a>
+        <a href="Sales Page.html">Order<br>下单</a>
+        <a href="FAQs.html">FAQs<br>疑问</a>
+        <a href="NewsUpdates.html">News<br>新闻</a>
+        <a href="Contact Us.html">Contact Us<br>联系我们</a>
+        <div class="scroll-cue">⇓</div>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="text-area">
+    <div class="image-container">
+        <img src="./IPF.png" alt="Enzolitics IPF">
+     </div>
+
+    <h1>Welcome to IPF Immune®</h1>
+    <h1>欢迎进入IPF免疫®王国</h1>
+    <p class="tagline">"Welcome to the future of immune support with IPF Immune®, a revolutionary dietary supplement designed to naturally fortify your immune system!"</p>
+    <p class="tagline" style="font-weight: bold;">"欢迎来到IPF Immune®免疫®未来世界, 一个革命性的，令你免疫力猛增的强身保健口服液"</p>
+</div>
+
+<!-- Sticky Button -->
+<button class="sticky-button" onclick="window.location.href='Sales Page.html'">🛒Get it Now<br>立即抢购</button>
+
+<footer>
+    &copy; 2025 IPF Immune®. All rights reserved. 版权所有。
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.querySelector(".menu-icon");
+        const menu = document.querySelector(".menu");
+        const stickyButton = document.querySelector(".sticky-button");
+        const scrollCue = document.querySelector(".scroll-cue");
+
+        // Toggle menu and hide/show sticky button
+        menuIcon.addEventListener("click", function () {
+            menu.classList.toggle("active");
+
+            // Hide sticky button when menu is active
+            if (menu.classList.contains("active")) {
+                stickyButton.style.display = "none";
+            } else {
+                stickyButton.style.display = "block";
+            }
+        });
+
+        // Menu scroll listener for scroll cue
+        menu.addEventListener("scroll", function () {
+            if (menu.scrollTop > 10) {
+                scrollCue.style.display = "none";
+            } else {
+                scrollCue.style.display = "block";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

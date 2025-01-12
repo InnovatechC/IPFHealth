@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Application Areas 应用领域 - IPF Immune®</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Prevent navbar from overlapping content */
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .nav-bar {
+            background: #2c3e50;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-bar img.logo {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .menu {
+            display: flex;
+            gap: 5px;
+            margin-left: 30px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 8px;
+            font-size: 16px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background 0.3s, border 0.3s;
+        }
+        .menu a:hover {
+            background: #34495e;
+            border: 1px solid #fff;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 30px;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2c3e50;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                border-top: 1px solid #ddd;
+                max-height: 70vh;
+                overflow-y: auto; /* Enable vertical scrolling */
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu a {
+                padding: 10px;
+                text-align: center;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+        .scroll-cue {
+            display: none;
+            position: absolute;
+            top: 85%;
+            left: 60px;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #fff;
+            animation: bounce 1.5s infinite;
+            z-index: 1001;
+        }
+        .menu.active .scroll-cue {
+            display: block;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: left;
+        }
+        .container img {
+            display: block;
+            margin: 0 auto;
+            width: 40%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        p.caption {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+        ul li {
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <span class="menu-icon">&#9776;</span>
+    <div class="menu">
+        <a href="index.html">Home<br>首页</a>
+        <a href="About us.html">About Us<br>关于我们</a>
+        <a href="Product Overview.html">Product Overview<br>产品概况</a>
+        <a href="Science_and_Research.html">Science & Research<br>科研</a>
+        <a href="Application Areas.html">Applications<br>用途</a>
+        <a href="Testimonials.html">Testimonials<br>用户体验</a>
+        <a href="Sales Page.html">Order<br>下单</a>
+        <a href="FAQs.html">FAQs<br>疑问</a>
+        <a href="NewsUpdates.html">News<br>新闻</a>
+        <a href="Contact Us.html">Contact Us<br>联系我们</a>
+        <div class="scroll-cue">⇓</div>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="container">
+    <h1>Application Areas</h1>
+    <h1> 应用领域</h1>
+    <img src="./application areas.png" alt="Application areas">
+    <p class="caption">
+        Enhance health and immunity, supporting recovery, resilience, and overall wellness for diverse needs.<br>
+        提升健康与免疫力，支持康复、增强韧性，并满足多样化健康需求。
+    </p>
+    <h2>Real-World Impact</h2> 
+    <h2>实际用途</h2>
+    <ul>
+        <li><strong>Recovery for Post-Chemotherapy/Radiation Patients:</strong> Accelerate recovery and restore vitality by supporting the body’s natural healing processes.<br><strong>用于化疗/放疗后患者的恢复：</strong> 通过支持身体的自然恢复过程，加快康复并重获活力。</li>
+        <li><strong>Immunodeficiency Support and Overall Wellness:</strong> Boost immune function and promote long-term health. Perfect for the elderly, children, and individuals with weakened immunity.<br><strong>免疫缺陷支持及整体健康：</strong> 增强免疫功能，促进长期健康。特别适合老年人、儿童及免疫力较弱的人群。</li>
+        <li><strong>Athletic Performance Enhancement:</strong> Enhance endurance, reduce recovery time, and promote physical resilience for athletes.<br><strong>提升运动表现：</strong> 提高耐力，缩短恢复时间，并增强运动员的身体韧性。</li>
+        <li><strong>Stress Reduction and Mental Clarity:</strong> Support stress management and improve focus and mental clarity.<br><strong>缓解压力与提升专注力：</strong> 帮助管理压力，提高专注力和清晰度。</li>
+        <li><strong>Anti-Aging Benefits:</strong> Slow down the aging process by supporting cellular health and vitality.<br><strong>抗衰老功效：</strong> 通过支持细胞健康和活力，延缓衰老过程。</li>
+        <li><strong>Support for Autoimmune Conditions:</strong> Modulate immune responses and reduce inflammation for individuals with autoimmune disorders.<br><strong>自体免疫疾病的支持：</strong> 调节免疫反应，减少炎症，帮助自体免疫疾病患者缓解症状。</li>
+        <li><strong>Enhanced Response to Infections:</strong> Strengthen the body’s defenses to combat common colds, flu, and other infections.<br><strong>增强对感染的抵抗力：</strong> 增强身体防御功能，更好地应对普通感冒、流感和其他感染。</li>
+        <li><strong>Adjunct Therapy for Chronic Illnesses:</strong> Complement treatment for chronic conditions, potentially improving quality of life.<br><strong>慢性病的辅助治疗：</strong> 辅助慢性疾病治疗，有助于提高生活质量。</li>
+        <li><strong>General Health Maintenance:</strong> Promote immune balance and overall wellness for healthy individuals.<br><strong>日常健康维护：</strong> 帮助健康人群维持免疫平衡和整体健康。</li>
+    </ul>
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Virogentics. All rights reserved. 版权所有。
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.querySelector(".menu-icon");
+        const menu = document.querySelector(".menu");
+        const scrollCue = document.querySelector(".scroll-cue");
+
+        menuIcon.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        });
+
+        menu.addEventListener("scroll", function () {
+            if (menu.scrollTop > 10) {
+                scrollCue.style.display = "none"; // Hide cue after scrolling
+            } else {
+                scrollCue.style.display = "block"; // Show cue when at the top
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

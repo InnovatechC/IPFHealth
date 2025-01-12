@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs 常见问题 - IPF Immune®</title>
+    <meta name="google" content="notranslate">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Prevent navbar overlap */
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .nav-bar {
+            background: #2c3e50;
+            display: flex;
+            justify-content: start;
+            align-items: center; /* Center align items vertically */
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-bar img.logo {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .menu {
+            display: flex;
+            gap: 5px;
+            margin-left: 30px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 8px;
+            font-size: 16px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background 0.3s, border 0.3s;
+        }
+        .menu a:hover {
+            background: #34495e;
+            border: 1px solid #fff;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 30px;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2c3e50;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                border-top: 1px solid #ddd;
+                max-height: 70vh; /* Limit height for scrollable menu */
+                overflow-y: auto;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu a {
+                padding: 10px;
+                text-align: center;
+            }
+            .menu-icon {
+                display: block;
+            }
+             .scroll-cue {
+            display: none;
+            position: absolute;
+            top: 85%;
+            left: 60px;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #fff;
+            animation: bounce 1.5s infinite;
+            z-index: 1001;
+            }
+            .menu.active .scroll-cue {
+                display: block;
+            }
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container img {
+            width: 70%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .faq {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .faq h2 {
+            color: #333;
+        }
+        .faq p {
+            line-height: 1.6;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.querySelector('.menu-icon');
+            const menu = document.querySelector('.menu');
+            const scrollCue = document.createElement('div');
+            scrollCue.className = 'scroll-cue';
+            scrollCue.innerHTML = '⇓';
+            menu.appendChild(scrollCue);
+
+            menuIcon.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+
+            menu.addEventListener('scroll', () => {
+                if (menu.scrollTop > 10) {
+                    scrollCue.style.display = 'none';
+                } else {
+                    scrollCue.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+    <img src="./logo.png" alt="Logo" class="logo">
+    <span class="menu-icon">&#9776;</span>
+    <div class="menu">
+        <a href="index.html">Home<br>首页</a>
+        <a href="About us.html">About Us<br>关于我们</a>
+        <a href="Product Overview.html">Product Overview<br>产品概况</a>
+        <a href="Science_and_Research.html">Science & Research<br>科研</a>
+        <a href="Application Areas.html">Applications<br>用途</a>
+        <a href="Testimonials.html">Testimonials<br>用户体验</a>
+        <a href="Sales Page.html">Order<br>下单</a>
+        <a href="FAQs.html">FAQs<br>疑问</a>
+        <a href="NewsUpdates.html">News<br>新闻</a>
+        <a href="Contact Us.html">Contact Us<br>联系我们</a>
+    </div>
+</div>
+
+<!-- Content Section -->
+<div class="container">
+    <h1>FAQs 常见问题 💡</h1>
+    <img src="./FAQ.png" alt="FAQs">
+    <div class="faq">
+        <h2>Q1: Is IPF Immune® safe to use? IPF Immune® 是否安全？</h2>
+        <p>A1: Yes, IPF Immune® has undergone rigorous testing and is scientifically proven to have low toxicity compared to traditional antivirals.</p>
+        <p>是的，IPF Immune® 经过严格测试，与传统抗病毒药物相比，其毒性非常低。</p>
+    </div>
+    <div class="faq">
+        <h2>Q2: How should I store IPF Immune®? IPF Immune® 应如何储存？</h2>
+        <p>A2: Store in a cool, dry place, away from direct sunlight.</p>
+        <p>存放在阴凉干燥处，避免阳光直射。</p>
+    </div>
+    <div class="faq">
+        <h2>Q3: Where is IPF Immune® manufactured? IPF Immune® 是在哪里生产的？</h2>
+        <p>A3: It is produced in the United States following strict quality standards.</p>
+        <p>它在美国生产，遵循严格的质量标准。</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Virogentics. All rights reserved. 版权所有。
+</footer>
+
+</body>
+</html>

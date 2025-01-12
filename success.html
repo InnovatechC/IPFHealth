@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation / 确认</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #3A0000; /* Dark background for visibility */
+            overflow: hidden;
+        }
+        h1 {
+            color: #fff; /* White for heading */
+            margin-top: 50px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #fff; /* White text */
+        }
+        .english,
+        .chinese {
+            color: #fff; /* Ensure all text is white */
+        }
+        .confirmation-image {
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        a {
+            display: block; /* Display buttons vertically */
+            margin: 20px auto;
+            text-decoration: none;
+            padding: 5px 10px; /* Shortened button size */
+            background-color: #003366; /* Darker button color */
+            color: #fff !important; /* Force text color to white */
+            border-radius: 5px;
+            font-size: 14px; /* Slightly smaller text size */
+            max-width: 150px; /* Limit button width */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        a:hover {
+            background-color: #001a33; /* Even darker on hover */
+        }
+        a span {
+            color: #fff !important; /* Ensure all text inside the link is white */
+        }
+
+        /* Firework styles */
+        .firework {
+            position: absolute;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, red, orange, yellow, transparent);
+            border-radius: 50%;
+            animation: rise 1.5s ease-out, explode 0.5s ease-out 1.5s forwards;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-500px);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span class="english">Payment Confirmed</span><br>
+        <span class="chinese">支付已确认</span>
+    </h1>
+    <img src="./Confirmed.png" alt="Confirmation Image / 确认图片" class="confirmation-image">
+    <p>
+        <span class="english">The confirmation email has been sent to you, thank you very much for your payment!</span>
+        <br>
+        <span class="chinese">确认邮件已发送至您的邮箱，非常感谢您的支付！</span>
+    </p>
+    <a href="Sales Page.html">
+        <span class="english">Return to Sales Page</span><br>
+        <span class="chinese">返回销售页面</span>
+    </a>
+    <a href="index.html">
+        <span class="english">Return to Home</span><br>
+        <span class="chinese">返回首页</span>
+    </a>
+
+    <script>
+        // Function to create a firework
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = `${Math.random() * window.innerWidth}px`;
+            document.body.appendChild(firework);
+            setTimeout(() => firework.remove(), 2000); // Remove firework after animation
+        }
+
+        // Trigger fireworks every 500ms
+        setInterval(createFirework, 500);
+    </script>
+</body>
+</html>

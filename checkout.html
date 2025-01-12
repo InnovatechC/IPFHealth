@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout / 结账</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .checkout-image {
+            max-width: 300px; /* Smaller size for the image */
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        .shopping-bag {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: inline-block;
+            text-align: left;
+            width: 90%;
+            max-width: 600px;
+        }
+        .shopping-bag h2 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+        .shopping-bag p {
+            margin: 5px 0;
+        }
+        form {
+            margin-top: 20px;
+            display: inline-block;
+            text-align: left;
+            width: 90%;
+            max-width: 600px;
+        }
+        label {
+            font-size: 16px;
+            color: #555;
+        }
+        input, select, textarea, button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        // Function to update total price
+        function updateTotal() {
+            const quantity = document.getElementById('quantity').value;
+            const pricePerItem = 50; // Set the price per item here
+            const total = quantity * pricePerItem;
+            document.getElementById('totalAmount').innerText = `¥${total}`;
+            document.getElementById('amount').value = total; // Pass the amount to the form
+        }
+    </script>
+</head>
+<body>
+    <h1>Checkout / 结账</h1>
+    <img src="./checkout.png" alt="Checkout Process / 结账流程" class="checkout-image">
+
+    <div class="shopping-bag">
+        <h2>Shopping Bag / 购物袋</h2>
+        <p><strong>Product:</strong> Enzolitics IPF</p>
+        <p>
+            <label for="quantity">Quantity / 数量:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" oninput="updateTotal()" required>
+        </p>
+        <p><strong>Price per item:</strong> ¥50</p>
+        <p><strong>Total Amount:</strong> <span id="totalAmount">¥50</span></p>
+    </div>
+
+    <form action="payment.html" method="GET">
+        <input type="hidden" id="amount" name="amount" value="50">
+        
+        <label for="name">Name / 姓名:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="address">Address (China) / 地址 (中国):</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+        
+        <label for="email">Email / 电子邮箱:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone Number (Optional) / 电话 (可选):</label>
+        <input type="text" id="phone" name="phone">
+        
+        <label for="payment">Payment Method / 支付方式:</label>
+        <select id="payment" name="payment" required>
+            <option value="alipay">Alipay / 支付宝</option>
+            <option value="wechat">WeChat Pay / 微信支付</option>
+            <option value="visa">Visa / 信用卡</option>
+            <option value="mastercard">MasterCard / 万事达</option>
+        </select>
+        
+        <button type="submit">Go to Payment / 进入支付页面</button>
+    </form>
+    <a href="Sales Page.html">Return to Order Page / 返回下单页面</a>
+</body>
+</html>

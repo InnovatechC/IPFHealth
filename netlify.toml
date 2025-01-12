@@ -1,0 +1,24 @@
+[build]
+  functions = "functions"
+  publish = "."
+
+/functions
+  create-checkout-session.js
+
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
+
+[[redirects]]
+from = "/sales page"
+to = "/sales%20page.html"
+status = 200
+
+[functions]
+  directory = "functions"
+
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
